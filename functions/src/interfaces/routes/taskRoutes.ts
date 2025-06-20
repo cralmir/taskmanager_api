@@ -1,5 +1,5 @@
-import { Router } from "express";
-import { authenticateToken } from "../middleware/authMiddleware";
+import {Router} from "express";
+import {authenticateToken} from "../middleware/authMiddleware";
 import {
   addTasksByUser,
   deleteTask,
@@ -7,6 +7,7 @@ import {
   updateTask,
 } from "../controllers/taskController";
 
+// eslint-disable-next-line new-cap
 const router = Router();
 
 router.get("/task", authenticateToken, getTasksByUser);

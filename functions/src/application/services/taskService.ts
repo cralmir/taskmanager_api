@@ -1,6 +1,6 @@
-import { db } from "../config/firebase";
-import { TaskInput } from "../schemas/taskSchema";
-import { Task } from "../types/task";
+import {db} from "../../config/firebase";
+import {TaskInput} from "../../schemas/taskSchema";
+import {Task} from "../../types/task";
 
 export const createTaskByUser = async (
   userId: string,
