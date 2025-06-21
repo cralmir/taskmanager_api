@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "445efa2d-1b99-48e6-80a7-4ebba529f046",
+		"name": "Task Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4779031"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"juasn@mail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-taskmanager-1d0a1.cloudfunctions.net/api/login",
+					"protocol": "https",
+					"host": [
+						"us-central1-taskmanager-1d0a1",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"juan@mail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-taskmanager-1d0a1.cloudfunctions.net/api/register",
+					"protocol": "https",
+					"host": [
+						"us-central1-taskmanager-1d0a1",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get tasks by user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJTSlJwenhMSjM2WGJMcjVRWGFSMSIsImlhdCI6MTc1MDUyMjgwNCwiZXhwIjoxNzUwNjA5MjA0fQ.nRjLsjKTfcmNVpwt7GmtdU5Dwfooc0KNco915p-IqzM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-taskmanager-1d0a1.cloudfunctions.net/api/task",
+					"protocol": "https",
+					"host": [
+						"us-central1-taskmanager-1d0a1",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJTSlJwenhMSjM2WGJMcjVRWGFSMSIsImlhdCI6MTc1MDUyMjg5MSwiZXhwIjoxNzUwNjA5MjkxfQ.c-kMl5rJBNyFZz9HAA1p3vSSQDRcbrRV4I70whd0X3M",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-taskmanager-1d0a1.cloudfunctions.net/api/task",
+					"protocol": "https",
+					"host": [
+						"us-central1-taskmanager-1d0a1",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJTSlJwenhMSjM2WGJMcjVRWGFSMSIsImlhdCI6MTc1MDQwMTg0MCwiZXhwIjoxNzUwNDg4MjQwfQ.pJgD502Kl3rnJWUjgXRTCr6dcSQe8tCDJyvJ6wRc94o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n           \n            \"completed\": true\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-taskmanager-1d0a1.cloudfunctions.net/api/task/quFuNldzGEeJ7T1YxTxr",
+					"protocol": "https",
+					"host": [
+						"us-central1-taskmanager-1d0a1",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+						"task",
+						"quFuNldzGEeJ7T1YxTxr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJTSlJwenhMSjM2WGJMcjVRWGFSMSIsImlhdCI6MTc1MDQwMTg0MCwiZXhwIjoxNzUwNDg4MjQwfQ.pJgD502Kl3rnJWUjgXRTCr6dcSQe8tCDJyvJ6wRc94o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Test Update\",\n    \"completed\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-taskmanager-1d0a1.cloudfunctions.net/api/task/N8mWVSmEPMQM6YzWuBOC",
+					"protocol": "https",
+					"host": [
+						"us-central1-taskmanager-1d0a1",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"api",
+						"task",
+						"N8mWVSmEPMQM6YzWuBOC"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
