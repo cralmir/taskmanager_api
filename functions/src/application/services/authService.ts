@@ -22,7 +22,7 @@ export const registerUser = async (
 
   if (existingUser !== null) return null;
 
-  const userRef = await db.collection("usersTest").add({email: input.email});
+  const userRef = await db.collection("users").add({email: input.email});
 
   const token = jwk.sign({userId: userRef.id}, SECRET, {expiresIn: "24h"});
   return token;

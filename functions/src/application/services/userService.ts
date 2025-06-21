@@ -3,7 +3,7 @@ import {User} from "../../types/user";
 
 export const findUserByEmail = async (email: string): Promise<User | null> => {
   const snapshot = await db
-    .collection("usersTest")
+    .collection("users")
     .where("email", "==", email)
     .get();
 

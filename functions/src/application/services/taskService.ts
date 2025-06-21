@@ -6,7 +6,7 @@ export const createTaskByUser = async (
   userId: string,
   input: TaskInput
 ): Promise<Task> => {
-  const newTaksRef = db.collection("taskTest").doc();
+  const newTaksRef = db.collection("tasks").doc();
 
   const task: Task = {
     id: newTaksRef.id,
@@ -24,7 +24,7 @@ export const createTaskByUser = async (
 
 export const getTasksByUserId = async (userId: string): Promise<Task[]> => {
   const snapshot = await db
-    .collection("taskTest")
+    .collection("tasks")
     .where("userId", "==", userId)
     .orderBy("created_at", "desc")
     .get();
@@ -43,7 +43,7 @@ export const updateTasksByTaskId = async (
   taskId: string,
   updates: Partial<Omit<Task, "id" | "userId" | "created_at">>
 ): Promise<Task | null> => {
-  const taskRef = db.collection("taskTest").doc(taskId);
+  const taskRef = db.collection("tasks").doc(taskId);
   const taskDoc = await taskRef.get();
 
   if (!taskDoc.exists) return null;
@@ -64,7 +64,7 @@ export const deleteTaskByTaskId = async (
   userId: string,
   taskId: string
 ): Promise<boolean> => {
-  const taskRef = db.collection("taskTest").doc(taskId);
+  const taskRef = db.collection("tasks").doc(taskId);
   const taskDoc = await taskRef.get();
 
   if (!taskDoc.exists) return false;
